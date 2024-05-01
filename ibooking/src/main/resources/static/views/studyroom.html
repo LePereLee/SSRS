@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>自习室预订系统管理 - 自习室管理</title>
+    <meta charset="UTF-8">
+    <link href="../easyui/themes/bootstrap/easyui.css" rel="stylesheet" type="text/css">
+    <link href="../easyui/themes/icon.css" rel="stylesheet" type="text/css">
+    <link href="../easyui/themes/color.css" rel="stylesheet" type="text/css">
+    <script src="../easyui/jquery.min.js" type="text/javascript"></script>
+    <script src="../easyui/jquery.easyui.min.js" type="text/javascript"></script>
+    <script src="../easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
+    <style type="text/css">
+        body {
+            font-family: microsoft yahei;
+        }
+    </style>
+</head>
+<body>
+<div style="width:100%">
+    <h2>自习室管理</h2>
+
+    <table class="easyui-datagrid" fitColumns="true" id="dg"
+           pagination="true"
+           rownumbers="true" singleSelect="true"
+           title="自习室信息" toolbar="#toolbarRoom" method="get">
+        <thead>
+        <tr>
+            <th field="id" width="50">ID</th>
+            <th field="buildingNum" width="50">楼栋信息</th>
+            <th field="classRoomNum" width="50">自习室信息</th>
+        </tr>
+        </thead>
+    </table>
+    <div id="toolbarRoom">
+        <a class="easyui-linkbutton" href="javascript:void(0)" iconCls="icon-add"
+           plain="true">添加</a>
+        <a class="easyui-linkbutton" href="javascript:void(0)" iconCls="icon-edit"
+           plain="true">修改</a>
+        <a class="easyui-linkbutton" href="javascript:void(0)" iconCls="icon-remove"
+           plain="true">删除</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+</script>
+</body>
+</html>
