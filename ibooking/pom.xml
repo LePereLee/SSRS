@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    
+    <!-- 父项目 -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -9,7 +11,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.huawei.stfse</groupId>
+    <groupId>com.fudan</groupId>
     <artifactId>ibooking</artifactId>
     <version>0.01</version>
     <name>ibooking</name>
@@ -20,20 +22,24 @@
         <java.version>1.8</java.version>
     </properties>
 
+    <!-- 依赖项 -->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
             <scope>provided</scope>
         </dependency>
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -83,7 +89,19 @@
         </dependency>
     </dependencies>
 
+    <!-- 项目构建 -->
     <build>
+        <!-- 使用默认目录架构 -->
+        <!--
+            |-src
+                |-main
+                    |-java  // Java主源代码目录
+                    |-resources // 资源文件目录
+                |-test
+                    |-java // 测试主代码目录
+                    |-resources // 测试资源文件目录
+        -->
+        <!-- 插件 -->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
