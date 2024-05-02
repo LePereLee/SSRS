@@ -1,4 +1,4 @@
-package ibooking.controller;
+package com.huawei.ibooking.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

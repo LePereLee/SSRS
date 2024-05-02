@@ -1,4 +1,4 @@
-package ibooking;
+package com.huawei.ibooking;
 
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

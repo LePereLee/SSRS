@@ -1,4 +1,4 @@
-package ibooking.model;
+package com.huawei.ibooking.model;
 
 
 import lombok.Getter;

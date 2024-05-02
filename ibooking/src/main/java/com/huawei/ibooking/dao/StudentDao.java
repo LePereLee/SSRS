@@ -1,7 +1,7 @@
-package ibooking.dao;
+package com.huawei.ibooking.dao;
 
-import ibooking.mapper.StudentMapper;
-import ibooking.model.StudentDO;
+import com.huawei.ibooking.mapper.StudentMapper;
+import com.huawei.ibooking.model.StudentDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

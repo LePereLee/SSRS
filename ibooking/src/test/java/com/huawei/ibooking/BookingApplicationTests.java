@@ -1,4 +1,4 @@
-package ibooking;
+package com.huawei.ibooking;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

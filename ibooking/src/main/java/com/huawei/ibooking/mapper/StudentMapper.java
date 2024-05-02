@@ -1,6 +1,6 @@
-package ibooking.mapper;
+package com.huawei.ibooking.mapper;
 
-import ibooking.model.StudentDO;
+import com.huawei.ibooking.model.StudentDO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

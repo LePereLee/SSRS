@@ -1,7 +1,7 @@
-package ibooking.controller;
+package com.huawei.ibooking.controller;
 
-import ibooking.business.StudentBusiness;
-import ibooking.model.StudentDO;
+import com.huawei.ibooking.business.StudentBusiness;
+import com.huawei.ibooking.model.StudentDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

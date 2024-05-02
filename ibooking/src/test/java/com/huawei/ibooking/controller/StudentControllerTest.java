@@ -1,9 +1,9 @@
-package ibooking.controller;
+package com.huawei.ibooking.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import ibooking.BookingApplication;
-import ibooking.model.StudentDO;
+import com.huawei.ibooking.BookingApplication;
+import com.huawei.ibooking.model.StudentDO;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
