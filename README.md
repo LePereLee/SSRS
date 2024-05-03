@@ -7,60 +7,60 @@
 
 |-src
 
-​        |-main
+&emsp;&emsp;|-main
 
-​                |-java  // Java主源代码目录
+&emsp;&emsp;&emsp;&emsp;|-java  // Java主源代码目录
 
-​                        |-com\huawei\ibooking
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-com\huawei\ibooking
 
-​                                |-business
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-business
 
-​                                        *|-StudentBusiness.java*
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;*|-StudentBusiness.java*
 
-​                                |-controller
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-controller
 
-​                                        *|-IndexController.java*
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;*|-IndexController.java*
 
-​                                        *|-StudentController.java*
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;*|-StudentController.java*
 
-​                                        *|-StudyRoomController.java*
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;*|-StudyRoomController.java*
 
-​                                |-dao
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-dao
 
-​                                        *|-StudentDao.java*
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;*|-StudentDao.java*
 
-​                                |-mapper
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-mapper
 
-​                                        *|-StudentMapper.java*
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;*|-StudentMapper.java*
 
-​                                |-model
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-model
 
-​                                        *|-StudentDO.java*
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;*|-StudentDO.java*
 
-​                                        *|-StudyRoomDO.java*
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;*|-StudyRoomDO.java*
 
-​                                *|-BookingApplication.java*
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;*|-BookingApplication.java*
 
-​                                *|-WebConfigurer.java*
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;*|-WebConfigurer.java*
 
-​                |-resources // 资源文件目录
+&emsp;&emsp;&emsp;&emsp;|-resources // 资源文件目录
 
-​                        |-com\huawei\ibooking\mapper
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-com\huawei\ibooking\mapper
 
-​                                |-*StudentMapper.xml*
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-*StudentMapper.xml*
 
-​                        |-static
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-static
 
-​                        |-templates
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-templates
 
-​                        *|-application.yml*
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;*|-application.yml*
 
-​                        *|-data.sql*
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;*|-data.sql*
 
-​                        *|-schema.sql*
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;*|-schema.sql*
 
-​        |-test
+&emsp;&emsp;|-test
 
-​                |-java // 测试主代码目录
+&emsp;&emsp;&emsp;&emsp;|-java // 测试主代码目录
 
-​                |-resources // 测试资源文件目录
+&emsp;&emsp;&emsp;&emsp;|-resources // 测试资源文件目录
