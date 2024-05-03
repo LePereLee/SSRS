@@ -7,60 +7,60 @@
 
 |-src
 
-​		|-main
+​        |-main
 
-​				|-java  // Java主源代码目录
+​                |-java  // Java主源代码目录
 
-​						|-com\huawei\ibooking
+​                        |-com\huawei\ibooking
 
-​								|-business
+​                                |-business
 
-​										*|-StudentBusiness.java*
+​                                        *|-StudentBusiness.java*
 
-​								|-controller
+​                                |-controller
 
-​										*|-IndexController.java*
+​                                        *|-IndexController.java*
 
-​										*|-StudentController.java*
+​                                        *|-StudentController.java*
 
-​										*|-StudyRoomController.java*
+​                                        *|-StudyRoomController.java*
 
-​								|-dao
+​                                |-dao
 
-​										*|-StudentDao.java*
+​                                        *|-StudentDao.java*
 
-​								|-mapper
+​                                |-mapper
 
-​										*|-StudentMapper.java*
+​                                        *|-StudentMapper.java*
 
-​								|-model
+​                                |-model
 
-​										*|-StudentDO.java*
+​                                        *|-StudentDO.java*
 
-​										*|-StudyRoomDO.java*
+​                                        *|-StudyRoomDO.java*
 
-​								*|-BookingApplication.java*
+​                                *|-BookingApplication.java*
 
-​								*|-WebConfigurer.java*
+​                                *|-WebConfigurer.java*
 
-​				|-resources // 资源文件目录
+​                |-resources // 资源文件目录
 
-​						|-com\huawei\ibooking\mapper
+​                        |-com\huawei\ibooking\mapper
 
-​								|-*StudentMapper.xml*
+​                                |-*StudentMapper.xml*
 
-​						|-static
+​                        |-static
 
-​						|-templates
+​                        |-templates
 
-​						*|-application.yml*
+​                        *|-application.yml*
 
-​						*|-data.sql*
+​                        *|-data.sql*
 
-​						*|-schema.sql*
+​                        *|-schema.sql*
 
-​		|-test
+​        |-test
 
-​				|-java // 测试主代码目录
+​                |-java // 测试主代码目录
 
-​				|-resources // 测试资源文件目录
+​                |-resources // 测试资源文件目录
