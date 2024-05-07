@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.huawei.ibooking.mapper.StudentMapper">
+    <resultMap id="stu" type="com.huawei.ibooking.model.StudentDO"/>
+
+    <select id="getStudents" resultMap="stu">
+        select id, stuNum, name, password
+        from tbl_student
+    </select>
+
+    <select id="getStudent" resultMap="stu" parameterType="java.lang.String">
+        select id, stuNum, name, password
+        from tbl_student
+        where stuNum = #{stuNum}
+    </select>
+
+    <update id="saveStudent" parameterType="com.huawei.ibooking.model.StudentDO">
+        merge into tbl_student (stuNum, name, password) key (stuNum)
+            values (#{stu.stuNum}, #{stu.name}, #{stu.password})
+    </update>
+
+    <delete id="deleteStudent" parameterType="java.lang.String">
+        delete
+        from tbl_student
+        where stuNum = #{stuNum}
+    </delete>
+</mapper>
