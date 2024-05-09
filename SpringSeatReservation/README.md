@@ -1,4 +1,4 @@
 # SpringSeatReservation
-图书馆座位预约系统
+自习室座位预约系统
 vue+springboot
 含移动端、后台管理
