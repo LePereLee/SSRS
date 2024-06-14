@@ -1,7 +1,7 @@
 <template>
   <div style="width: 100vw;height: 100vh;background-color: #78b3ef">
     <div class="login-box">
-      <h2>图书馆座位预约</h2>
+      <h2>自习室座位预约</h2>
       <form>
         <div class="user-box">
           <input type="text" name="" required="" v-model="number">
