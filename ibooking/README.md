@@ -1,6 +1,8 @@
 # SSRS
 软件过程管理 - 实践项目：自习座位预约系统
 
+ibooking为老师所发参考代码，以下内容为对该代码的分析
+
 文件结构：
 
 ![file-structure](file-structure.png)
