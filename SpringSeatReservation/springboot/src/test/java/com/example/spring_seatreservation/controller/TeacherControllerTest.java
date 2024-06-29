@@ -1,51 +1,18 @@
 package com.example.spring_seatreservation.controller;
 
-import com.example.spring_seatreservation.mapper.TeacherMapper;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.boot.test.mock.mockito.MockBean;
-
-import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.example.spring_seatreservation.Bean.R;
 import com.example.spring_seatreservation.mapper.TeacherMapper;
-import org.junit.jupiter.api.BeforeEach;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import static org.mockito.Mockito.*;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-
+@WebMvcTest(TeacherController.class)
 class TeacherControllerTest {
 
     @Autowired
@@ -54,40 +21,51 @@ class TeacherControllerTest {
     @MockBean
     private TeacherMapper teacherMapper;
 
-    @InjectMocks
-    private TeacherController teacherController;
-
-
-    @BeforeEach
-    void setUp() {
-        System.out.println("----TeacherControllerTest start----");
-        MockitoAnnotations.initMocks(this);
-    }
-
-    @AfterEach
-    void tearDown() {
-        System.out.println("=====TeacherControllerTest end=====");
-    }
-
+    // 测试 getReservation 方法
     @Test
-    void getReservation() throws Exception{
-        // Mock data
-        Map<String, Object> reservationData = new HashMap<>();
-        reservationData.put("key1", "value1"); // Add sample data
-        when(teacherMapper.getReservation()).thenAnswer(invocation -> reservationData);
+    void testGetReservation() throws Exception {
+        List<Map<String, Object>> reservations = List.of(new HashMap<>(), new HashMap<>()); // 模拟数据
+        given(teacherMapper.getReservation()).willReturn(reservations);
 
-        // Perform GET request and verify response
-        mockMvc.perform(MockMvcRequestBuilders.get("/teacher/getReservation"))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.status").value("ok"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.rows").value(reservationData));
+        mockMvc.perform(get("/teacher/getReservation"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.status").value("ok"))
+                .andExpect(jsonPath("$.rows").isArray())
+                .andExpect(jsonPath("$.rows").isNotEmpty());
     }
 
+    // 测试 getReservationNeedSub 方法
     @Test
-    void getReservationNeedSub() {
+    void testGetReservationNeedSub() throws Exception {
+        List<Map<String, Object>> reservations = List.of(new HashMap<>(), new HashMap<>()); // 模拟数据
+        given(teacherMapper.getReservationNeedSub()).willReturn(reservations);
+
+        mockMvc.perform(get("/teacher/getReservationNeedSub"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.status").value("ok"))
+                .andExpect(jsonPath("$.rows").isArray())
+                .andExpect(jsonPath("$.rows").isNotEmpty());
     }
 
+    // 测试 subScore 方法
     @Test
-    void subScore() {
+    void testSubScore() throws Exception {
+        Map<String, Object> requestMap = new HashMap<>();
+        requestMap.put("studentId", "123");
+        requestMap.put("score", 95);
+
+        mockMvc.perform(post("/teacher/subScore")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(new ObjectMapper().writeValueAsString(requestMap)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.status").value("ok"));
+
+        // 验证 teacherMapper.subScore(map) 是否被调用
+        verify(teacherMapper).subScore(requestMap);
+        // 验证 teacherMapper.subReservationScore(map) 是否被调用
+        verify(teacherMapper).subReservationScore(requestMap);
     }
 }
